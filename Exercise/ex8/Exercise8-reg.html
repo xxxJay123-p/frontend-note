@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise 8: Register</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h3>Register | Sign up</h3>
+    </header>
+    <div class="form-wrapper">
+      <fieldset style="width: 500px">
+        <legend>Create Account</legend>
+        <p>Please fill in this form to create an account</p>
+        <form action="#" id="registrationForm" onsubmit="return validateForm()">
+          <!-- Email -->
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            maxlength="40"
+            placeholder="Enter your Email"
+            required
+          />
+          <br />
+          <!-- User name -->
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            pattern="[a-zA-Z0-9_]+"
+            placeholder="Create your Username"
+            required
+          />
+          <br />
+          <!-- Password -->
+          <label for="pw">Password:</label>
+          <input
+            type="password"
+            name="pw"
+            id="pw"
+            minlength="8"
+            maxlength="20"
+            placeholder="Enter your Password"
+            required
+          />
+          <br />
+          <!-- Confirm-Password -->
+          <label for="pw-confirm">Confirm Password:</label>
+          <input
+            type="password"
+            name="pw-confirm"
+            id="pw-confirm"
+            minlength="8"
+            maxlength="20"
+            placeholder="Confirm your Password"
+            oninput="validatePassword()"
+            required
+          />
+          <div id="passwordError" style="color: red"></div>
+          <hr />
+          <p>Personal Information</p>
+          <!-- Name -->
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            maxlength="30"
+            pattern="[a-zA-Z]+"
+            placeholder="Enter your Name"
+            required
+          />
+          <br />
+          <!-- Phone Number -->
+          <label for="phone">Phone Number: +852 </label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            maxlength="8"
+            placeholder="Enter Your Phone No."
+          />
+          <!-- Gender -->
+          <br />
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <br />
+          <input type="submit" value="Create Account" />
+        </form>
+      </fieldset>
+    </div>
+    <p>
+      Back to Login
+      <a href="./Exercise8.html" alt="Create account">Click here</a>
+    </p>
+    <footer class="bg-dark text-white p-3 text-center">
+      <div class="container">
+        <div class="row">
+          <!-- Contact Information Column -->
+          <div class="col-md-6 mb-3 mb-md-0">
+            <p>Contact us:</p>
+            <p>Email: info@example.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="col-md-6">
+            <!-- Contact Form -->
+            <form action="/submit_contact_form" method="post">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    pattern="[a-zA-Z0-9_]+"
+                    maxlength="30"
+                    required
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    maxlength="40"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function validatePassword() {
+        var password = document.getElementById("pw").value;
+        var confirmPassword = document.getElementById("pw-confirm").value;
+        var passwordError = document.getElementById("passwordError");
+
+        if (password !== confirmPassword) {
+          passwordError.textContent = "Passwords do not match.";
+        } else {
+          passwordError.textContent = "";
+        }
+      }
+
+      function validateForm() {
+        validatePassword(); // Additional validations can be added here
+        // Return false if any validation fails
+        return document.getElementById("passwordError").textContent === "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Reset some default styles */
+      body,
+      h1,
+      h2,
+      h3,
+      p,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+      }
+
+      /* Center the content */
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Style form wrapper */
+      .form-wrapper,
+      .questionnaire-wrapper {
+        margin-bottom: 20px;
+      }
+
+      /* Style form fieldset */
+      fieldset {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+
+      legend {
+        font-weight: bold;
+      }
+
+      /* Style form labels and inputs */
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      /* Style checkbox label */
+      .checkbox-label {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      /* Style submit button */
+      input[type="submit"],
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Add some spacing between submit buttons */
+      input[type="submit"] + button {
+        margin-left: 10px;
+      }
+
+      /* Style the footer */
+      footer {
+        margin-top: 20px;
+        background-color: #f8f9fa;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header
+    <header>
+      <h1>7. HTML: Form I</h1>
+      <h2>By Jay Cheng</h2>
+    </header> -->
+
+    <main>
+      <!-- Register Form -->
+      <div class="form-wrapper">
+        <fieldset style="width: 500px">
+          <legend>Create Account</legend>
+          <p>Please fill in ths form to create an account</p>
+          <form action="#" id="registrationForm">
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your Email"
+              required
+            />
+            <br />
+            <!-- User name -->
+            <label for="username"> Username:</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Create your Username"
+              required
+            />
+            <br />
+            <!-- Password -->
+            <label for="pw">Password:</label>
+            <input
+              type="password"
+              name="pw"
+              id="pw"
+              placeholder="Enter your Passwords"
+              required
+            />
+            <br />
+            <!-- Confirm-Password -->
+            <!-- <label for="pw-confirm">Confirm Password:</label>
+            <input
+              type="password"
+              name="pw-confirm"
+              id="pw-confirm"
+              placeholder="Confirm your Passwords"
+              required
+            /> -->
+            <hr />
+            <p>Personal Information</p>
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your Name"
+              required
+            />
+            <br />
+            <!-- Phone Number  -->
+            <label for="phone">Phone Number:</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Enter Your Phone No."
+            />
+            <!-- Gender -->
+            <br />
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <br />
+            <input type="submit" value="Create Account" />
+          </form>
+        </fieldset>
+      </div>
+      <hr />
+      <hr />
+      <!-- Questionnaire -->
+      <div class="questionnaire-wrapper">
+        <fieldset id="questionnaireForm" style="width: 500px">
+          <legend>Questionnaire</legend>
+          <form id="questionnaireForm">
+            <label id="fruits">Ticker fruits that you like:</label><br />
+            <!-- Options of Question 1 -->
+            <input type="checkbox" name="apple" id="apple" value="Apple" />
+            <label for="apple">Apple</label>
+
+            <input type="checkbox" name="banana" id="banana" value="Banana" />
+            <label for="banana">Banana</label>
+
+            <input type="checkbox" name="orange" id="orange" value="Orange" />
+            <label for="orange">Orange</label>
+            <br />
+            <!-- Question 2 -->
+            <label for="animal">Which is your favorite animal?</label>
+            <select id="animal" name="animal">
+              <option>Select One</option>
+              <optgroup label="Terrestrial">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="elephant">Elephant</option>
+                <option value="lion">Lion</option>
+              </optgroup>
+              <optgroup label="Marine">
+                <option value="dolphin">Dolphin</option>
+                <option value="fish">Fish</option>
+                <option value="jellyfish">JS</option>
+              </optgroup>
+            </select>
+            <br />
+            <label for="opinion">Other opinion:</label><br />
+            <textarea
+              name="opinion"
+              id="opinion"
+              cols="30"
+              rows="3"
+              placeholder="Say something here....."
+            ></textarea
+            ><br />
+            <input type="submit" />
+          </form>
+        </fieldset>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div style="text-align: center">@ 2024 Copyright: Jay Cheng</div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Function to convert form data to JSON
+      function formToJson(formId) {
+        var formData = {};
+        var formElements = document.getElementById(formId).elements;
+
+        for (var i = 0; i < formElements.length; i++) {
+          var element = formElements[i];
+          if (element.name) {
+            formData[element.name] = element.value;
+          }
+          if (element.type === "checkbox") {
+            // Handle checkboxes separately
+            formData[element.name] = element.checked;
+          } else if (element.name) {
+            formData[element.name] = element.value;
+          }
+        }
+
+        return JSON.stringify(formData, null, 2);
+      }
+
+      // Event listener for form submission
+      document
+        .getElementById("questionnaireForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          var jsonData = formToJson("questionnaireForm");
+          console.log(jsonData);
+        });
+      // Event listener for form submission
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          var jsonData = formToJson("registrationForm");
+          console.log(jsonData);
+        });
+
+      document
+        .getElementById("questionnaireForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          var jsonData = formToJson("questionnaireForm");
+          console.log(jsonData);
+        });
+    </script>
+  </body>
+</html>
